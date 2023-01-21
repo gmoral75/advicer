@@ -26,7 +26,10 @@ class AdvicePage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 50),
         child: Column(
           children: const [
-            Custombutton()
+            Expanded(child: Placeholder()),
+            SizedBox(
+              height: 100,
+              child: Center(child: Custombutton()))
           ],
         ),
         )
