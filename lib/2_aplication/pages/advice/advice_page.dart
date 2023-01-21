@@ -1,5 +1,6 @@
 
 import 'package:advicer/2_aplication/core/services/theme_service.dart';
+import 'package:advicer/2_aplication/pages/advice/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,7 +22,14 @@ class AdvicePage extends StatelessWidget {
           })
         ],
       ),
-      body: Placeholder(),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 50),
+        child: Column(
+          children: const [
+            Custombutton()
+          ],
+        ),
+        )
     );
   }
 }
