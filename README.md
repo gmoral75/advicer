@@ -1,6 +1,6 @@
 # advicer
 
-A new Flutter project.
+A training Flutter project.
 
 ## Getting Started
 
