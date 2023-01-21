@@ -30,8 +30,8 @@ class AdvicePage extends StatelessWidget {
           children: [
             Expanded(
               child: Center(
-            child: ErrorMessage(message: 'upps something gone wrong!'),
-             //child: AdviceField(advice: 'Example advice')   
+            //child: ErrorMessage(message: 'upps something gone wrong!'),
+            //child: AdviceField(advice: 'Example advice')   
               /*CircularProgressIndicator(
                 color: themeData.colorScheme.secondary,)*/
               /*Text(
