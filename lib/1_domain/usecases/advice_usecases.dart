@@ -10,7 +10,7 @@ class AdviceUseCases {
     // for example get and advice
     debugPrint('fake get advice triggered!');
     await Future.delayed(const Duration(seconds: 3), () {});
-    //return right(const AdviceEntity(advice: 'advice to test', id: 1));
-    return left(ServerFailure());
+    return right(const AdviceEntity(advice: 'advice to test', id: 1));
+    //return left(ServerFailure());
   }
 }

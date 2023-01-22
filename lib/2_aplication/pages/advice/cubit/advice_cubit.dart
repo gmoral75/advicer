@@ -6,19 +6,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 part 'advice_state.dart';
 
+const generalFailureMessage = 'Ups, somethin gone wrong, please try aain';
+const cacheFailureMessage = 'Ups, Cache Error, please try aain';
+const serverFailureMessage = 'Ups, API Error, please try aain';
+
 class AdviceCubit extends Cubit<AdviceCubitState> {
   AdviceCubit() : super(AdviceInitial());
   final AdviceUseCases adviceUseCases = AdviceUseCases();
   // could also use other usecases
 
   void adviceRequested() async {
-     emit(AdviceStateLoading());
-      // Exceute business logic
-      final failureOrAdvice = await adviceUseCases.getAdvice();
+    emit(AdviceStateLoading());
+    // Exceute business logic
+    final failureOrAdvice = await adviceUseCases.getAdvice();
 
-      failureOrAdvice.fold(
-        (failure) => emit(const AdviceStateError(message: "We have an error!")),
-        (advice) => emit(AdviceStateLoaded(advice: advice.advice))
-      );
+    failureOrAdvice.fold(
+        (failure) => emit(AdviceStateError(message: _mapFailureToMessage(failure))),
+        (advice) => emit(AdviceStateLoaded(advice: advice.advice)));
+  }
+
+  String _mapFailureToMessage(Failure failure) {
+    switch (failure.runtimeType) {
+      case ServerFailure:
+        return serverFailureMessage;
+      case CacheFailure:
+        return cacheFailureMessage;
+      default:
+        return generalFailureMessage;
+    }
   }
 }
