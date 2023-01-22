@@ -52,7 +52,7 @@ class AdvicePage extends StatelessWidget {
                     if (state is AdviceInitial) {
                       return Text('Your Advice is waiting for you', style: themeData.textTheme.headline1,);
                     } else if (state is AdviceStateError) {
-                      return const ErrorMessage(message: 'upps an error!');
+                      return ErrorMessage(message: state.message);
                     } else if (state is AdviceStateLoaded) {
                       return AdviceField(advice: state.advice,);
                     } else if (state is AdviceStateLoading) {
