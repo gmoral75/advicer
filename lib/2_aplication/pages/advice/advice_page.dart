@@ -58,7 +58,7 @@ class AdvicePage extends StatelessWidget {
                     } else if (state is AdviceStateLoading) {
                       return CircularProgressIndicator(color: themeData.colorScheme.secondary,);
                     }
-                    return SizedBox();
+                    return const SizedBox();
                   },
                 ),
               )),
