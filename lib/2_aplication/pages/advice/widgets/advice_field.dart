@@ -13,15 +13,17 @@ class AdviceField extends StatelessWidget {
       elevation: 20,
       borderRadius: BorderRadius.circular(15),
       child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          color: themeData.colorScheme.onPrimary
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-          child: Text(advice, style: themeData.textTheme.bodyText1, textAlign: TextAlign.center,),
-          )
-      ),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: themeData.colorScheme.onPrimary),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+            child: Text(
+              advice,
+              style: themeData.textTheme.bodyText1,
+              textAlign: TextAlign.center,
+            ),
+          )),
     );
   }
 }

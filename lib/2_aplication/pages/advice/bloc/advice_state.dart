@@ -19,7 +19,7 @@ class AdviceStateLoaded extends AdvicerState {
 }
 
 class AdviceStateError extends AdvicerState {
-   final String message;
+  final String message;
   AdviceStateError({required this.message});
 
   @override

@@ -50,13 +50,20 @@ class AdvicePage extends StatelessWidget {
                 child: BlocBuilder<AdvicerBloc, AdvicerState>(
                   builder: (context, state) {
                     if (state is AdviceInitial) {
-                      return Text('Your Advice is waiting for you', style: themeData.textTheme.headline1,);
+                      return Text(
+                        'Your Advice is waiting for you',
+                        style: themeData.textTheme.headline1,
+                      );
                     } else if (state is AdviceStateError) {
                       return ErrorMessage(message: state.message);
                     } else if (state is AdviceStateLoaded) {
-                      return AdviceField(advice: state.advice,);
+                      return AdviceField(
+                        advice: state.advice,
+                      );
                     } else if (state is AdviceStateLoading) {
-                      return CircularProgressIndicator(color: themeData.colorScheme.secondary,);
+                      return CircularProgressIndicator(
+                        color: themeData.colorScheme.secondary,
+                      );
                     }
                     return const SizedBox();
                   },
