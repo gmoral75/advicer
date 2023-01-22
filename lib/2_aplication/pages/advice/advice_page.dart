@@ -6,6 +6,7 @@ import 'package:advicer/2_aplication/pages/advice/widgets/error_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import '../../../injection.dart';
 
 class AdvicerPageWrapperProvider extends StatelessWidget {
   const AdvicerPageWrapperProvider({super.key});
@@ -13,7 +14,7 @@ class AdvicerPageWrapperProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AdviceCubit(),
+      create: (context) => sl<AdviceCubit>(),
       child: const AdvicePage(),
     );
   }
