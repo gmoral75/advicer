@@ -1,16 +1,15 @@
-# advicer
+# Advicer
 
-A training Flutter project.
+POC Clean Architecture
 
-## Getting Started
+## TODO
 
-This project is a starting point for a Flutter application.
+After download the project run 'flutter pub get'
 
-A few resources to get you started if this is your first Flutter project:
+## Dependencies
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+provider: ^6.0.5
+flutter_bloc: ^8.1.1
+equatable: ^2.0.5
+dartz: ^0.10.1
+http: ^0.13.5
