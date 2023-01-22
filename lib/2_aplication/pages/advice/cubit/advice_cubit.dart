@@ -1,4 +1,5 @@
 import 'package:advicer/1_domain/entities/advice_entity.dart';
+import 'package:advicer/1_domain/failures/failures.dart';
 import 'package:advicer/1_domain/usecases/advice_usecases.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +14,11 @@ class AdviceCubit extends Cubit<AdviceCubitState> {
   void adviceRequested() async {
      emit(AdviceStateLoading());
       // Exceute business logic
-      final AdviceEntity advice = await adviceUseCases.getAdvice();
+      final failureOrAdvice = await adviceUseCases.getAdvice();
 
-      debugPrint('got cubit advice');
-      emit(AdviceStateLoaded(advice: advice.advice));
-      //emit(AdviceStateError(message: "We have an error!"));
+      failureOrAdvice.fold(
+        (failure) => emit(const AdviceStateError(message: "We have an error!")),
+        (advice) => emit(AdviceStateLoaded(advice: advice.advice))
+      );
   }
 }
