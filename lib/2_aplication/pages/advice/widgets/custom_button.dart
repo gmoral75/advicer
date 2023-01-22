@@ -1,4 +1,5 @@
 import 'package:advicer/2_aplication/pages/advice/bloc/advice_bloc.dart';
+import 'package:advicer/2_aplication/pages/advice/cubit/advice_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,7 +13,7 @@ class Custombutton extends StatelessWidget {
     return InkResponse(
       onTap: () {
         // We call the event
-        BlocProvider.of<AdvicerBloc>(context).add(AdviceRequestedEvent());
+        BlocProvider.of<AdviceCubit>(context).adviceRequested();
       },
       child: Material(
         elevation: 20,
