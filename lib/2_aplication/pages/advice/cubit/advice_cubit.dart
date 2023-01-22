@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 part 'advice_state.dart';
 
-const generalFailureMessage = 'Ups, somethin gone wrong, please try aain';
-const cacheFailureMessage = 'Ups, Cache Error, please try aain';
-const serverFailureMessage = 'Ups, API Error, please try aain';
+const generalFailureMessage = 'Ups, something went wrong, please try again';
+const cacheFailureMessage = 'Ups, Cache Error, please try again';
+const serverFailureMessage = 'Ups, API Error, please try again';
 
 class AdviceCubit extends Cubit<AdviceCubitState> {
   AdviceCubit({required this.adviceUseCases}) : super(AdviceInitial());
